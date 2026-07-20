@@ -19,7 +19,7 @@
     <li>Masala Dosa</li>
     <li>Idli Vada</li>
     <li>South Indian Meals</li>
-    <li>Veg Biryani</li>
+    <li>North Indian Meals</li>
 </ul>
 
 </body>
