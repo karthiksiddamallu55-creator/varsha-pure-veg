@@ -19,7 +19,7 @@
     <li>Masala Dosa</li>
     <li>Idli Vada</li>
     <li>South Indian Meals</li>
-    <li>Panner chilly</li>
+    <li>Panner Chilly</li>
 </ul>
 
 </body>
