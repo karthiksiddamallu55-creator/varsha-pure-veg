@@ -3,11 +3,10 @@ name: Java Maven CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-and-deploy:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -29,15 +28,15 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "target/demo-java-project-war.war"
+          source: "target/varsha-pure-veg.war"
           target: "/tmp"
 
-      - name: Deploy WAR to Tomcat
+      - name: Deploy to Tomcat
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            rm -rf /opt/tomcat/webapps/demo-java-project-war*
-            cp /tmp/target/demo-java-project-war.war /opt/tomcat/webapps/
+            rm -rf /opt/tomcat/webapps/varsha-pure-veg*
+            cp /tmp/target/varsha-pure-veg.war /opt/tomcat/webapps/
