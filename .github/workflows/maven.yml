@@ -1,0 +1,30 @@
+name: Java Maven CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: corretto
+          java-version: '21'
+
+      - name: Build Project
+        run: mvn clean package
+
+      - name: Upload WAR File
+        uses: actions/upload-artifact@v4
+        with:
+          name: war-file
+          path: target/*.war
